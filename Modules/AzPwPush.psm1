@@ -66,5 +66,12 @@ function Generate-AzPassword {
     $CharSet = ('0123456789{]+-[*=@:)}$^%;(_!&#?>/|').ToCharArray() 
     $RandSymbol = (Get-Random -InputObject $CharSet -Count 5) -Join ''
     $words = [System.IO.file]::ReadAllLines('wordlist.txt') 
+    return ($words |  Get-Random -Count 3) + $RandSymbol -Join '-'
+}
+
+function Generate-AzTBPassword {
+    $CharSet = ('0123456789{]+-[*=@:)}$^%;(_!&#?>/|').ToCharArray() 
+    $RandSymbol = (Get-Random -InputObject $CharSet -Count 5) -Join ''
+    $words = [System.IO.file]::ReadAllLines('wordlist.txt') 
     return ($words |  Get-Random -Count 3) + $RandSymbol -Join ''
 }
