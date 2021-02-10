@@ -115,9 +115,9 @@ div {
 <center>
 $($Logo)
 <title>Password Push Portal</Title>
-<h3>Generate a one-time password URL</h3>
 
 <div>
+  <h3>Generate a one-time password URL</h3>
   <form action="create" method=POST>
     <label for="password">Password</label><br>
     <input type="text" id="password" name="password" value="$($Password)"><br>
